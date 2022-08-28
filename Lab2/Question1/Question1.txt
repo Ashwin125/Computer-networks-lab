@@ -1,0 +1,11 @@
+Write a simple TCP iterative server and client
+to evaluate the given expression.
+
+The client enters a post fix expression A B + C* D E-F G + * -
+and sends to the server. There may or may not be spaces before
+and after the operators. For example, all of the following
+are valid expressions to enter: “13 + 42*5”, “10+2/4”, “5 + 6 - 3”.
+The server evaluates the post fix expression and sends the result back
+to the client. The client displays the result on the screen.
+It then prompts the user to enter the next expression.
+

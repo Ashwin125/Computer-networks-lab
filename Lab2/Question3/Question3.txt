@@ -1,0 +1,12 @@
+3)
+
+Using socket programming, implement the following problem.
+The server should be able to keep
+track of upto 10 simultaneous users.
+First client that connects the server will
+have privilege to send a C source file to the server.
+The server will then compile, execute and send the output
+to all the clients connected to the server.
+All the clients(except the first one)
+should stay only in the listen state.
+
