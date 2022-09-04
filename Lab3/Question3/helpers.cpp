@@ -67,6 +67,10 @@ size_t receive_size_t(int sockfd) {
 
 string receiveString(int sockfd) {
     char * buffer = receive(sockfd);
-    return string(buffer, buffer + strlen(buffer));
+    
+    string res = string(buffer, buffer + strlen(buffer));
+    delete[] buffer;
+
+    return res;
 }
 
