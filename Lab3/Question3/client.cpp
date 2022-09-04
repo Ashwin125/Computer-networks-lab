@@ -80,8 +80,6 @@ int main(int argc, char *argv[]) {
         chunks.push_back(res);
     }
 
-    close(sockfd_A);
-
     // connect to server_B
     int sockfd_B = connectServer(argv[1], argv[3]);
     fprintf(stdout, "Connected to server B.\n");
@@ -130,7 +128,16 @@ int main(int argc, char *argv[]) {
     
     fprintf(stdout, "File saved.\n");
     fprintf(stdout, "File name: target.txt\n");
+    
+    // send the thanks message
+    string message = "THANKS";
+    
+    send_data(sockfd_A, message);
+    send_data(sockfd_B, message);
+        
+    fprintf(stdout, "Thanks sent!\n");
 
+    close(sockfd_A);
     close(sockfd_B);
     return 0;
 }

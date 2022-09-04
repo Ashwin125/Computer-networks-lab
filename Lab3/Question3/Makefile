@@ -11,6 +11,7 @@ genfile:
 	$(RM) random_file_generator
 
 clean:
+	$(RM) target.txt
 	$(RM) server_A
 	$(RM) server_B
 	$(RM) client

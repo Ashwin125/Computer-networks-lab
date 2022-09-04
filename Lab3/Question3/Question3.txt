@@ -1,0 +1,11 @@
+Assume that there two servers, A and B,
+which store a 10MB file that is split into 10 parts.
+Client 1 requests the file to server A which replies
+to client 1 with 5 chunks of the requested file,
+which are randomly selected.  Later on,
+client 1 identifies the missing chunks and it requests
+the missing chunks (and only them) to server B.
+Moreover, the Client 1 can request 1 piece of chunk at the same.
+Once all the chunks are received,
+Client 1 sends the THANKS message to both of the servers.
+

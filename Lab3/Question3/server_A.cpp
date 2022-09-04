@@ -57,7 +57,12 @@ void handleClient(int sockfd) {
         // send the actual data
         send_data(sockfd, chunks[chunk_number]);
     }
+    
+    // receive the thanks message
+    char* res = receive(sockfd);
 
+    fprintf(stdout, "Message: %s\n", res);
+    delete[] res;
     fprintf(stdout, "Disconnected sockfd: %d\n", sockfd);
 }
 
