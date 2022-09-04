@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <numeric>
+#include <random>
 
 #include "helpers.cpp"
 #include "make_chunks.cpp"
@@ -24,7 +25,9 @@ array<size_t, 5> five_random_number_less_than_10() {
     iota(nums.begin(), nums.end(), 0);
     
     // shuffle the array
-    random_shuffle(nums.begin(), nums.end());
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(nums.begin(), nums.end(), g);
 
     array<size_t, 5> res;
 
@@ -93,7 +96,7 @@ int main(int argc, char *argv[]) {
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
     
-    if(bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if(::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         fprintf(stderr, "Binding Failed.\n");
         exit(1);
     }

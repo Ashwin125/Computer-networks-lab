@@ -1,12 +1,13 @@
 CC = g++
+STD = -std=c++17
 
 all:
-	$(CC) server_A.cpp -o server_A
-	$(CC) server_B.cpp -o server_B
-	$(CC) client.cpp -o client
+	$(CC) $(STD) server_A.cpp -o server_A
+	$(CC) $(STD) server_B.cpp -o server_B
+	$(CC) $(STD) client.cpp -o client
 
 genfile:
-	$(CC) random_file_generator.cpp -o random_file_generator
+	$(CC) $(STD) random_file_generator.cpp -o random_file_generator
 	./random_file_generator
 	$(RM) random_file_generator
 
